@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-REX UNIVERSE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://wallpapercave.com/wp/wp2757874.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      font-size: 3rem;
+      color: gold;
+      font-weight: bold;
+    }
+    .owner-img {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+    .animated-text {
+      font-size: 1.5rem;
+      animation: fadeIn 3s ease-in-out;
+      margin-top: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .menu-button {
+      background: gold;
+      color: black;
+      padding: 15px 30px;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      margin: 20px 0;
+      cursor: pointer;
+      transition: transform 0.3s;
+      box-shadow: 0 0 10px gold;
+    }
+    .menu-button:hover {
+      transform: scale(1.1);
+    }
+    .menu-page {
+      display: none;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .activity {
+      margin: 20px 0;
+      padding: 10px;
+      border-bottom: 1px solid gold;
+    }
+    .contact-links a {
+      display: block;
+      margin: 10px;
+      color: gold;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body onclick="playClickSound()">
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+  <header>
+    <div class="logo">R</div>
+    <img src="https://files.catbox.moe/0cudsm.jpg" alt="Owner Image" class="owner-img">
+  </header>
+  <div class="animated-text">
+    Welcome to <strong>S-REX UNIVERSE</strong><br>
+    Hello dear, don't worry we gat you, kindly click on the menu button for our activities.
+  </div>
+  <button class="menu-button" onclick="showMenuPage()">
+    MENU
+  </button>
+  <div class="menu-page" id="menuPage">
+    <div class="activity">
+      <h2>BOT DEPLOYMENT</h2>
+      <p>WhatsApp multi device bot..many features included....</p>
+    </div>
+    <div class="activity">
+      <h2>FREE FIRE DEALS</h2>
+      <p>I buy and sell free fire accounts, and also DM for your top ups both uid and in-game purchases..</p>
+    </div>
+    <div class="activity">
+      <h2>SOCIAL MEDIA SALES</h2>
+      <p>I buy and sell Facebook, Instagram, TikTok, Discord, LinkedIn, and many more....</p>
+    </div>
+    <div class="activity">
+      <h2>MOD APK'S</h2>
+      <p>We have all kinds of APK'S such as Capcut, Alight Motion, Blurr app, Wink, and so much more.....</p>
+    </div>
+    <div class="activity">
+      <h2>EDITING</h2>
+      <p>We can make your noob video look like a professional work, with just a smartphone.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/+2348132160559">Contact Me on WhatsApp</a>
+      <a href="https://whatsapp.com/channel/0029Vb1ggsuLtOj9NHrH8K0c">Join WhatsApp Channel 1</a>
+      <a href="https://whatsapp.com/channel/0029Vb5xd6CKWEKmgOC0XJ03">Join WhatsApp Channel 2</a>
+    </div>
+  </div>
+  <footer>
+    @powered by itsjust-Rex
+  </footer>
+  <script>
+    function showMenuPage() {
+      document.getElementById('menuPage').style.display = 'block';
+    }
+    function playClickSound() {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>
