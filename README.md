@@ -1,3 +1,3 @@
-# Main-s-rex-web
-# Oga rest nothing to see
+# «Main-s-rex-web»
+# HAVE A NICE DAY
 @itsjust-Rex
