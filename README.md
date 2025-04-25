@@ -2,11 +2,21 @@
 
 **Repository Owner**: itsjust-Rex  
 Welcome to the S-REX UNIVERSE! A place for innovation, creativity, and overcoming challenges.
-## if you want to deploy
-just edit only index.html...
-# Deploy on Render or Vercel
-any further questions kindly contact me....
-don't forget to star and fork my repo..
+
+---
+
+## Repository Stats
+
+![Visitors Count](https://img.shields.io/badge/dynamic/json?label=Visitors&query=%24.visitors&url=https%3A%2F%2Fapi.countapi.xyz%2Fget%2Fitsjust-Rex%2FMain-s-rex-web%2Fvisitors)
+![Stars](https://img.shields.io/github/stars/itsjust-Rex/Main-s-rex-web?style=social)
+![Forks](https://img.shields.io/github/forks/itsjust-Rex/Main-s-rex-web?style=social)
+
+---
+
+## How to Deploy
+
+To deploy this project, simply edit the `index.html` file as needed.  
+You can deploy it using platforms like Render or Vercel.
 
 ---
 
