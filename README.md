@@ -6,6 +6,7 @@ Welcome to the S-REX UNIVERSE! A place for innovation, creativity, and overcomin
 just edit only index.html...
 # Deploy on Render or Vercel
 any further questions kindly contact me....
+don't forget to star and fork my repo..
 
 ---
 
