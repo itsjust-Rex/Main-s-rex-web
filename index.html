@@ -14,6 +14,82 @@
       font-family: 'Inter', sans-serif;
     }
 
+    /* Loading Screen Styles */
+    #loadingScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: #FFD700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .loading-text {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: fadeInText 1s ease-in-out;
+    }
+
+    .loading-line {
+      width: 80%;
+      height: 10px;
+      background: #333;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .loading-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FFD700;
+      animation: loading 3s infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        left: -100%;
+      }
+      50% {
+        left: 0;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Rest of your page styles */
     body {
       background: #000;
       color: #FFFFFF;
@@ -74,6 +150,22 @@
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
     }
 
+    /* Sparkle Effect */
+    @keyframes sparkle {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.8);
+      }
+      100% {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .sparkle {
+      animation: sparkle 0.5s ease-in-out;
+    }
+
     .menu-page {
       display: none;
       padding: 20px;
@@ -94,80 +186,48 @@
       transform: scale(1.05);
     }
 
+    /* About Owner Styles */
+    .about-owner {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-left: 4px solid #FFD700;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .about-owner h3 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .about-owner p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
     .footer {
       text-align: center;
       margin-top: 40px;
-      color: #FFD700;
       font-size: 14px;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+      animation: neonText 1.5s ease-in-out infinite alternate;
     }
 
-    .button-link {
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    /* Modal (Popup) Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    .modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 80%;
-      max-height: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .modal img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .order-button {
-      background-color: #FFD700;
-      color: #000;
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      margin-top: 20px;
-      cursor: pointer;
-      border-radius: 8px;
-      text-align: center;
-      transition: background 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
-    }
-
-    .order-button:hover {
-      background: #e6c200;
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    /* Neon effect for footer */
+    @keyframes neonText {
+      0% {
+        text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 15px #FF0000, 0 0 20px #FF0000;
+      }
+      100% {
+        text-shadow: 0 0 20px #FF0000, 0 0 30px #FF0000, 0 0 40px #FF0000, 0 0 50px #FF0000;
+      }
     }
 
     /* Fade-in animation */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
     @keyframes fadeInBody {
       0% {
         opacity: 0;
@@ -177,20 +237,22 @@
       }
     }
 
-    @keyframes slideInFromTop {
-      0% {
-        transform: translateY(-100%);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInText {
+    @keyframes fadeInPage {
       0% {
         opacity: 0;
       }
       100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInFromLeft {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
         opacity: 1;
       }
     }
@@ -207,93 +269,95 @@
       }
     }
 
-    @keyframes fadeInFromLeft {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeInPage {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
   </style>
 </head>
 <body>
 
-  <header id="homeHeader">
-    <img src="https://files.catbox.moe/0cudsm.jpg" alt="Owner" class="owner-img">
-    <div class="welcome">WELCOME TO S-REX UNIVERSE</div>
-    <div class="description">hello dear, don't worry we gat you, kindly click on the menu button for our activities.</div>
-  </header>
-
-  <button class="menu-button" onclick="showMenu()">MENU</button>
-
-  <div class="menu-page" id="menuPage">
-    <button class="back-button" onclick="goBack()">BACK</button>
-
-    <div class="activity">
-      <h3>BOT DEPLOYMENT</h3>
-      <p>WhatsApp multi device bot..many features included....</p>
-      <!-- Preview Button for BOT DEPLOYMENT -->
-      <button class="contact-button" onclick="openModal('bot')">Preview</button>
-    </div>
-
-    <div class="activity">
-      <h3>FREE FIRE DEALS</h3>
-      <p>I buy and sell free fire accounts, and also DM for your top ups both uid and in-game purchases..</p>
-      <!-- Preview Button for FREE FIRE DEALS -->
-      <button class="contact-button" onclick="openModal('fire')">Preview</button>
-    </div>
-
-    <div class="activity">
-      <h3>SOCIAL MEDIA SALES</h3>
-      <p>I buy and sell Facebook, Instagram, tiktok, discord, LinkedIn, and many more....</p>
-    </div>
-
-    <div class="activity">
-      <h3>MOD APK'S</h3>
-      <p>We have all kinds of APK'S such as Capcut, alight motion, blurr app, wink, and so much more.....</p>
-    </div>
-
-    <div class="activity">
-      <h3>EDITING</h3>
-      <p>We can make your noob video look like a professional work, with just smart phone.</p>
-    </div>
-
-    <div class="activity">
-      <h3>CONTACT</h3>
-      <a href="https://wa.me/+2348132160559" class="contact-button button-link" target="_blank">Message me on WhatsApp</a><br>
-      <a href="https://whatsapp.com/channel/0029Vb1ggsuLtOj9NHrH8K0c" class="contact-button button-link" target="_blank">Join Channel 1</a><br>
-      <a href="https://whatsapp.com/channel/0029Vb5xd6CKWEKmgOC0XJ03" class="contact-button button-link" target="_blank">Join Channel 2</a>
-    </div>
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div class="loading-text">Loading S-REX UNIVERSE...</div>
+    <div class="loading-line"></div>
   </div>
 
-  <div class="footer" style="color: gray;">@powered by S-REX</div>
+  <!-- Main Content -->
+  <div id="mainContent" style="display:none;">
+    <header id="homeHeader">
+      <img src="https://files.catbox.moe/0cudsm.jpg" alt="Owner" class="owner-img">
+      <div class="welcome">WELCOME TO S-REX UNIVERSE</div>
+      <div class="description">hello dear, don't worry we gat you, kindly click on the menu button for our activities.</div>
+    </header>
 
-  <!-- Modal for Image Preview -->
-  <div id="previewModal" class="modal">
-    <div class="modal-content">
-      <img id="modalImage" src="" alt="Preview">
-      <a id="orderLink" href="" target="_blank">
-        <button class="order-button">Order Now</button>
-      </a>
+    <button class="menu-button" onclick="showMenu()">MENU</button>
+
+    <!-- About Owner Section -->
+    <div class="about-owner">
+      <h3>ABOUT OWNER</h3>
+      <p><strong>Name:</strong> S-REX</p>
+      <p><strong>Username:</strong> itsjust-Rex</p>
+      <p><strong>GitHub:</strong> <a href="https://GitHub.com/itsjust-Rex" target="_blank" style="color: #FFD700;">https://GitHub.com/itsjust-Rex</a></p>
+      <p><strong>Email:</strong> sr3xtech@gmal.com</p>
+      <p><strong>Bio:</strong> I've learnt how to overcome my obstacles, what have you overcome lately.</p>
     </div>
+
+    <div class="menu-page" id="menuPage">
+      <button class="back-button" onclick="goBack()">BACK</button>
+
+      <div class="activity">
+        <h3>BOT DEPLOYMENT</h3>
+        <p>WhatsApp multi device bot..many features included....</p>
+        <!-- Updated Button for BOT DEPLOYMENT -->
+        <a href="https://wa.me/+2348132160559?text=HOW+MUCH+IS+FOR+BOT+DEPLOYMENT.." class="contact-button sparkle button-link" target="_blank">Click to Order</a>
+      </div>
+
+      <div class="activity">
+        <h3>FREE FIRE DEALS</h3>
+        <p>I buy and sell free fire accounts, and also DM for your top ups both uid and in-game purchases..</p>
+        <!-- Updated Button for FREE FIRE DEALS -->
+        <a href="https://wa.me/+2348132160559?text=WHAT'S+YOUR+FREE+FIRE+INFO..." class="contact-button sparkle button-link" target="_blank">Enter to Order</a>
+      </div>
+
+      <div class="activity">
+        <h3>SOCIAL MEDIA SALES</h3>
+        <p>I buy and sell Facebook, Instagram, tiktok, discord, LinkedIn, and many more....</p>
+        <!-- Direct Link Button for SOCIAL MEDIA SALES -->
+        <a href="https://wa.me/+2348132160559?text=Can+I+see+a+preview+of+the+accounts+you+sell" class="contact-button sparkle button-link" target="_blank" onclick="playClick()">Direct Link</a>
+      </div>
+
+      <div class="activity">
+        <h3>MOD APK'S</h3>
+        <p>We have all kinds of APK'S such as Capcut, Alight Motion, Blurr app, Wink, and so much more....</p>
+        <!-- Enter Button for MOD APK'S -->
+        <a href="https://wa.me/+2348132160559?text=THE+MOD+APP+I+NEED+IS..." class="contact-button sparkle button-link" target="_blank" onclick="playClick()">Enter</a>
+      </div>
+
+      <div class="activity">
+        <h3>EDITING</h3>
+        <p>We can make your noob video look like a professional work, with just smart phone.</p>
+        <!-- View Button for EDITING -->
+        <a href="https://wa.me/+2348132160559?text=SHOW+PREVIEW+OF+YOUR+EDIT.." class="contact-button sparkle button-link" target="_blank" onclick="playClick()">View</a>
+      </div>
+
+      <div class="activity">
+        <h3>CONTACT</h3>
+        <a href="https://wa.me/+2348132160559" class="contact-button sparkle button-link" target="_blank">Message me on WhatsApp</a><br>
+        <a href="https://whatsapp.com/channel/0029Vb1ggsuLtOj9NHrH8K0c" class="contact-button sparkle button-link" target="_blank">Join Channel 1</a><br>
+        <a href="https://whatsapp.com/channel/0029Vb5xd6CKWEKmgOC0XJ03" class="contact-button sparkle button-link" target="_blank">Join Channel 2</a>
+      </div>
+    </div>
+
+    <div class="footer">@powered by <span style="color: red; text-shadow: 0 0 20px red;">S-REX</span></div>
   </div>
 
   <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
   <script>
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("loadingScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }, 3000); // Wait for 3 seconds before showing the main content
+    };
+
     function playClick() {
       const sound = document.getElementById('clickSound');
       sound.currentTime = 0;
@@ -313,30 +377,6 @@
       document.getElementById('homeHeader').style.display = 'block';
       document.querySelector('.menu-button').style.display = 'block';
     }
-
-    function openModal(type) {
-      playClick();
-      let imageSrc = "";
-      let orderLink = "";
-      if (type === 'bot') {
-        imageSrc = "https://files.catbox.moe/rh1rfl.jpg";
-        orderLink = "https://wa.me/+2348132160559?text=I%20want%20to%20order%20the%20BOT%20DEPLOYMENT";
-      } else if (type === 'fire') {
-        imageSrc = "https://files.catbox.moe/x24iiu.jpg";
-        orderLink = "https://wa.me/+2348132160559?text=I%20want%20to%20order%20the%20FREE%20FIRE%20DEALS";
-      }
-      document.getElementById('modalImage').src = imageSrc;
-      document.getElementById('orderLink').href = orderLink;
-      document.getElementById('previewModal').style.display = 'flex';
-    }
-
-    // Close modal when clicking outside the modal content
-    document.getElementById('previewModal').onclick = function(event) {
-      if (event.target === document.getElementById('previewModal')) {
-        document.getElementById('previewModal').style.display = 'none';
-      }
-    }
   </script>
-
 </body>
 </html>
