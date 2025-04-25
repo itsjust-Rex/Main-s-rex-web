@@ -1,3 +1,5 @@
+<div align="center">
+
 # S-REX UNIVERSE
 
 **Repository Owner**: itsjust-Rex  
@@ -50,4 +52,4 @@ We strive to inspire and empower others to face challenges head-on and thrive in
 
 This project is powered by S-REX.
 
----
+</div>
