@@ -2,6 +2,10 @@
 
 **Repository Owner**: itsjust-Rex  
 Welcome to the S-REX UNIVERSE! A place for innovation, creativity, and overcoming challenges.
+## if you want to deploy
+just edit only index.html...
+# Deploy on Render or Vercel
+any further questions kindly contact me....
 
 ---
 
